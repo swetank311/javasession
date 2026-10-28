@@ -1,0 +1,19 @@
+import time
+import sys
+
+print("Press Ctrl+C to stop the clock.\n")
+
+try:
+    while True:
+        # Get the current time formatted as HH:MM:SS AM/PM
+        current_time = time.strftime("%I:%M:%S %p")
+        
+        # Print the time, \r resets the cursor to the start of the line
+        sys.stdout.write(f"\rCurrent Time: {current_time}")
+        sys.stdout.flush()
+        
+        # Wait 1 second before updating
+        time.sleep(1)
+        
+except KeyboardInterrupt:
+    print("\nClock stopped.")
